@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\Facades\View;
+
+use App\Models\Social;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+       View::composer(['includes.*'], function($view){
+       $view->with('social', Social::first());
+       });
     }
 
     /**

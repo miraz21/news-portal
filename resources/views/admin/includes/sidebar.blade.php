@@ -32,6 +32,18 @@ Sidebar -->
                         <a href="{{ route('news.index') }}"><i class="la la-newspaper-o"></i> <span> News Management</span></a>
                     </li>
 
+
+                    <!-- 
+                    @if(Session::get('admin_page') == 'theme')
+                        @php $active = "active" @endphp
+                    @else
+                        @php $active = "" @endphp
+                    @endif -->
+
+                    <li class="{{ $active }}">
+                        <a href="{{ route('theme') }}"><i class="la la-newspaper-o"></i> <span> Settings </span></a>
+                    </li>
+
             </ul>
         </div>
     </div>

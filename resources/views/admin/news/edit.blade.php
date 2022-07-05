@@ -171,4 +171,5 @@
             filebrowserUploadMethod: 'form'
         });
     </script>
+
     @endsection

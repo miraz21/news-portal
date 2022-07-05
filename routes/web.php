@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/home',[App\Http\Controllers\FrontendController::class,'redirect']);
 
+// Auth::routes();
+
 Route::get('/',[App\Http\Controllers\FrontendController::class,'index'])->name('index');
+
+Route::get('/news/{slug}',[App\Http\Controllers\FrontendController::class,'newsSingle'])->name('newsSingle');
+
+
 
 Route::middleware([
     'auth:sanctum',
@@ -48,6 +54,23 @@ Route::get('/news/add',[App\Http\Controllers\NewsController::class,'add'])->name
 
 Route::post('/news/store',[App\Http\Controllers\NewsController::class,'store'])->name('news.store');
 
-Route::post('/news/edit/{id}',[App\Http\Controllers\NewsController::class,'edit'])->name('news.edit');
+Route::get('/news/edit/{id}',[App\Http\Controllers\NewsController::class,'edit'])->name('news.edit');
 
 Route::post('/news/update/{id}',[App\Http\Controllers\NewsController::class,'update'])->name('news.update');
+
+Route::post('/news/delete/{id}',[App\Http\Controllers\NewsController::class,'delete'])->name('news.delete');
+
+Route::post('ckeditor', [App\Http\Controllers\CkeditorFileUploadController::class,'store'])->name('ckeditor.upload');
+
+
+
+Route::get('/theme',[App\Http\Controllers\ThemeController::class,'theme'])->name('theme');
+
+Route::post('/theme/update/{id}',[App\Http\Controllers\ThemeController::class,'themeUpdate'])->name('themeUpdate');
+
+
+
+
+Route::get('/social/settings',[App\Http\Controllers\SocialController::class,'social'])->name('social');
+
+Route::post('/social/settings/{id}',[App\Http\Controllers\SocialController::class,'socialUpdate'])->name('socialUpdate');
