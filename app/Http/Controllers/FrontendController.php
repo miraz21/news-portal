@@ -48,10 +48,11 @@ class FrontendController extends Controller
     {
      $theme = Theme::first();
      $news_detail=News::where('slug', $slug)->first();
-     $newsKey='news_'.$news_detail->id;
-     if(!Session::has($newsKey)){
-        $news_detail->increment('view_count');
-        Session::put($newsKey, 1);
+     $newsKey='news_'. $news_detail->id;
+     if(!Session::has($newsKey))
+     {
+     $news_detail->increment('view_count');
+     Session::put($newsKey, 1);
      }
      $related_news=News::where('category_id', '=', $news_detail->category_id)->where('id', '!=', $news_detail->id)->get();
      return view('newsSingle', compact('news_detail','theme','related_news'));

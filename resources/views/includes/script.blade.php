@@ -19,5 +19,9 @@
 
 <script id="dsq-count-scr" src="//news-portal-10.disqus.com/count.js" async></script>
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62c4341aef7aef23"></script>
+
+
 </body>
 </html>

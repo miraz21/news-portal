@@ -61,14 +61,9 @@
 								<img src="assets/img/flags/us.png" alt="" height="16"> English
 							</a>
 							<a href="javascript:void(0);" class="dropdown-item">
-								<img src="assets/img/flags/fr.png" alt="" height="16"> French
+								<img src="assets/img/flags/fr.png" alt="" height="16"> Bangla
 							</a>
-							<a href="javascript:void(0);" class="dropdown-item">
-								<img src="assets/img/flags/es.png" alt="" height="16"> Spanish
-							</a>
-							<a href="javascript:void(0);" class="dropdown-item">
-								<img src="assets/img/flags/de.png" alt="" height="16"> German
-							</a>
+						
 						</div>
 					</li>
 					<!-- /Flag -->

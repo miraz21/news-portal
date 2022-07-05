@@ -21,7 +21,6 @@ Route::get('/',[App\Http\Controllers\FrontendController::class,'index'])->name('
 Route::get('/news/{slug}',[App\Http\Controllers\FrontendController::class,'newsSingle'])->name('newsSingle');
 
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -31,6 +30,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
 
 Route::get('/admin/dashboard',[App\Http\Controllers\AdminController::class,'adminDashboard'])->name('adminDashboard');
 
@@ -67,7 +67,6 @@ Route::post('ckeditor', [App\Http\Controllers\CkeditorFileUploadController::clas
 Route::get('/theme',[App\Http\Controllers\ThemeController::class,'theme'])->name('theme');
 
 Route::post('/theme/update/{id}',[App\Http\Controllers\ThemeController::class,'themeUpdate'])->name('themeUpdate');
-
 
 
 

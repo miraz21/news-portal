@@ -61,14 +61,9 @@
 								<img src="assets/img/flags/us.png" alt="" height="16"> English
 							</a>
 							<a href="javascript:void(0);" class="dropdown-item">
-								<img src="assets/img/flags/fr.png" alt="" height="16"> French
+								<img src="assets/img/flags/fr.png" alt="" height="16"> Bangla
 							</a>
-							<a href="javascript:void(0);" class="dropdown-item">
-								<img src="assets/img/flags/es.png" alt="" height="16"> Spanish
-							</a>
-							<a href="javascript:void(0);" class="dropdown-item">
-								<img src="assets/img/flags/de.png" alt="" height="16"> German
-							</a>
+						
 						</div>
 					</li>
 					<!-- /Flag -->
@@ -76,7 +71,7 @@
 					<!-- Notifications -->
 					<li class="nav-item dropdown">
 						<a href="index.html#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<i class="fa fa-bell-o"></i> <span class="badge badge-pill">3</span>
+							<i class="fa fa-bell-o"></i> <span class="badge badge-pill"></span>
 						</a>
 						<div class="dropdown-menu notifications">
 							<div class="topnav-dropdown-header">
@@ -162,7 +157,7 @@
 					<!-- Message Notifications -->
 					<li class="nav-item dropdown">
 						<a href="index.html#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<i class="fa fa-comment-o"></i> <span class="badge badge-pill">8</span>
+							<i class="fa fa-comment-o"></i> <span class="badge badge-pill"></span>
 						</a>
 						<div class="dropdown-menu notifications">
 							<div class="topnav-dropdown-header">
@@ -264,8 +259,7 @@
 						</div>
 					</li>
 					<!-- /Message Notifications -->
-
-				   <div class="dropdown mt-3">
+                         <div class="dropdown mt-3">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{Auth::user()->name}}
                             </button>
@@ -275,6 +269,8 @@
                             <a class="dropdown-item" href="javascript:;" onclick="document.getElementById('logout').submit()">Logout</a>
                             <form action="{{ route('logout') }}" id="logout" method="post">@csrf</form>
                             </li>
+                            </ul>
+                          </div>
                             </ul>
                  </div>
 				</ul>

@@ -36,11 +36,7 @@
                                     </ul>
                                     <ul class="social-icon-one alternate">
                                         <li class="share">Share:</li>
-                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li class="twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li class="g_plus"><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                                        <li class="linkedin"><a href="#"><span class="fa fa-linkedin-square"></span></a></li>
-                                        <li class="pinteret"><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
+                                   <div class="addthis_inline_share_toolbox"></div>
                                     </ul>
                                 </div>
                                 

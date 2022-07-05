@@ -7,7 +7,7 @@
             <div class="auto-container">
                 <div class="single-item-carousel owl-carousel owl-theme">
 
-                    @foreach($latest_news as $news)
+                 @foreach($latest_news as $news)
                     <!--Slide-->
                     <div class="slide">
                         <figure class="image">
