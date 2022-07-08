@@ -60,6 +60,8 @@ Route::post('/news/update/{id}',[App\Http\Controllers\NewsController::class,'upd
 
 Route::post('/news/delete/{id}',[App\Http\Controllers\NewsController::class,'delete'])->name('news.delete');
 
+
+
 Route::post('ckeditor', [App\Http\Controllers\CkeditorFileUploadController::class,'store'])->name('ckeditor.upload');
 
 

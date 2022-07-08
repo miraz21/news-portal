@@ -3,21 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+
 use App\Models\News;
+
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Session;
+
 use Illuminate\Support\Str;
+
 use Image;
 
 class NewsController extends Controller
 {
-     public function index()
-     {
+    public function index()
+    {
+    if(Auth::id())
+    {
+    if(Auth::user()->usertype==1)
+    {
         Session::put('admin_page', 'news');
         $news = News::latest()->get();
         return view ('admin.news.index', compact('news'));
     }
+    else{
+    return redirect()->back();
+    }
+    }
+    else{
+    return redirect('login');
+    }
+    }
+
+    //  public function index()
+    //  {
+    //     Session::put('admin_page', 'news');
+    //     $news = News::latest()->get();
+    //     return view ('admin.news.index', compact('news'));
+    // }
 
   public function add()
   {
@@ -26,11 +51,12 @@ class NewsController extends Controller
         // Showing Categories and Sub Categories Dropdown
         $categories = Category::where(['parent_id' => 0])->where('status', 1)->get();
         $categories_dropdown = "<option selected disabled> Select Category </option>";
-        foreach ($categories as $cat){
+        foreach ($categories as $cat)
+        {
             $categories_dropdown .= "<option value='". $cat->id ."'>". $cat->category_name ." </option>";
             $sub_categories = Category::where(['parent_id' => $cat->id])->get();
             foreach ($sub_categories as $sub_cat){
-                $categories_dropdown .= "<option value='". $sub_cat->id ."'>  &nbsp; &nbsp; ---- ". $sub_cat->category_name ." </option>";
+            $categories_dropdown .= "<option value='". $sub_cat->id ."'>  &nbsp; &nbsp; ---- ". $sub_cat->category_name ." </option>";
             }
         }
 
@@ -46,15 +72,19 @@ class NewsController extends Controller
             'news_content' => 'required',
             'image' => 'required',
         ]);
+
         $news = new News();
         $news->news_title = $data['news_title'];
         $news->slug = Str::slug($data['news_title']);
         $news->category_id = $data['category_id'];
         $news->news_content = $data['news_content'];
+        $news->admin_id = Auth()->id();
 
-        $current_user = Auth::guard('admin')->user();
-        $user_id = $current_user->id;
-        $news->admin_id = $user_id;
+        
+        // $current_user = Auth()->id();
+        // $user_id = $current_user->id;
+         // $news->admin_id = $user_id;
+
 
         $news->seo_title = $data['seo_title'];
         $news->seo_subtitle = $data['seo_subtitle'];
@@ -64,19 +94,21 @@ class NewsController extends Controller
 
         $slug = Str::slug($data['news_title']);
         $random = rand(1,999999);
-        if($request->hasFile('image')){
+        if($request->hasFile('image'))
+        {
             $image_tmp = $request->file('image');
-            if($image_tmp->isValid()){
+            if($image_tmp->isValid())
+            {
                 $extension = $image_tmp->getClientOriginalExtension();
                 $filename = $slug . '-' . $random . '.' . $extension;
-                $image_path = 'public/uploads/news/' . $filename;
+                $image_path = 'uploads/news/' . $filename;
                 Image::make($image_tmp)->save($image_path);
                 $news->image = $filename;
             }
         }
 
-
-        if(empty($data['status'])){
+        if(empty($data['status']))
+        {
             $news->status = 0;
         } else {
             $news->status = 1;
@@ -87,6 +119,8 @@ class NewsController extends Controller
         return redirect()->back();
 
     }
+
+
         public function edit($id)
         {
         Session::put('admin_page', 'news');
@@ -104,8 +138,10 @@ class NewsController extends Controller
             }
             $categories_dropdown .= "<option value='". $cat->id ."' ". $selected .">". $cat->category_name ." </option>";
             $sub_categories = Category::where(['parent_id' => $cat->id])->get();
-            foreach ($sub_categories as $sub_cat){
-                if($sub_cat->id == $news->category_id){
+            foreach ($sub_categories as $sub_cat)
+            {
+                if($sub_cat->id == $news->category_id)
+                {
                     $selected = "selected";
                 } else {
                     $selected = "";
@@ -130,17 +166,18 @@ class NewsController extends Controller
         $news->slug = Str::slug($data['news_title']);
         $news->category_id = $data['category_id'];
         $news->news_content = $data['news_content'];
-
-        $current_user = Auth::guard('admin')->user();
-        $user_id = $current_user->id;
-        $news->admin_id = $user_id;
+        $news->admin_id = Auth()->id();
+        // $current_user = Auth::guard('admin')->user();
+        // $user_id = $current_user->id;
+        // $news->admin_id = $user_id;
 
         $news->seo_title = $data['seo_title'];
         $news->seo_subtitle = $data['seo_subtitle'];
         $news->seo_keywords = $data['seo_keywords'];
         $news->seo_description = $data['seo_description'];
 
-        if(empty($data['status'])){
+        if(empty($data['status']))
+        {
             $news->status = 0;
         } else {
             $news->status = 1;
@@ -154,7 +191,7 @@ class NewsController extends Controller
             if($image_tmp->isValid()){
                 $extension = $image_tmp->getClientOriginalExtension();
                 $filename = $slug . '-' . $random . '.' . $extension;
-                $image_path = 'public/uploads/news/' . $filename;
+                $image_path = 'uploads/news/' . $filename;
                 Image::make($image_tmp)->save($image_path);
                 $news->image = $filename;
             }
@@ -163,9 +200,11 @@ class NewsController extends Controller
         $news->save();
 
 
-        $image_path = 'public/uploads/news/';
-        if(!empty($data['image'])){
-            if(file_exists($image_path.$news->image)){
+        $image_path = 'uploads/news/';
+        if(!empty($data['image']))
+        {
+            if(file_exists($image_path.$news->image))
+            {
                 unlink($image_path.$data['current_image']);
             }
         }
@@ -179,10 +218,12 @@ class NewsController extends Controller
     {
         $news = News::findOrFail($id);
         $news->delete();
-        $image_path = 'public/uploads/news/';
+        $image_path = 'uploads/news/';
 
-        if(!empty($news->image)){
-            if(file_exists($image_path.$news->image)){
+        if(!empty($news->image))
+        {
+            if(file_exists($image_path.$news->image))
+            {
                 unlink($image_path.$news->image);
             }
         }

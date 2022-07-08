@@ -10,14 +10,36 @@ use Illuminate\Support\Facades\Session;
 
 use Illuminate\Support\Str;
 
+use Illuminate\Support\Facades\Auth;
+
 class CategoryController extends Controller
 {
-   public function index()
-   {
+     public function index()
+    {
+    if(Auth::id())
+    {
+    if(Auth::user()->usertype==1)
+    {
         Session::put('admin_page', 'category');
         $categories = Category::latest()->get();
         return view ('admin.category.index', compact('categories'));
     }
+  
+    else{
+    return redirect()->back();
+    }
+    }
+    else{
+    return redirect('login');
+    }
+    }
+
+   // public function index()
+   // {
+   //      Session::put('admin_page', 'category');
+   //      $categories = Category::latest()->get();
+   //      return view ('admin.category.index', compact('categories'));
+   //  }
 
     public function add(){
         Session::put('admin_page', 'category');

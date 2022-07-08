@@ -79,7 +79,7 @@
                 <div class="clearfix">
 
                     <div class="pull-left logo-outer">
-                        {{-- <div class="logo" style="background:url({{ asset('public/uploads/'.$theme->header_logo) }}) no-repeat;"><a href="{{ route('index') }}"></a></div> --}}
+                      <div class="logo" style="background:url({{ asset('uploads/'.$theme->header_logo) }}) no-repeat;"><a href="{{ route('index') }}"></a></div>
                     </div>
                     <div class="pull-right upper-right clearfix">
                         <div class="add-image">
@@ -652,7 +652,7 @@
         <div class="sticky-header" >
             <div class="auto-container clearfix">
                 <!--Logo-->
-                {{-- <div class="logo pull-left" style="position:relative; top:4px; padding:2px 0px; width:150px; height:50px;	background:url({{ asset('public/uploads/'.$theme->header_logo) }}) no-repeat;"> --}}
+            <div class="logo pull-left"  style="position:relative; top:4px; padding:2px 0px; width:150px; height:50px; background:url({{ asset('uploads/'.$theme->header_logo) }}) no-repeat;"> 
                     <a href="{{ route('index') }}" class="img-responsive" title=""></a>
                 </div>
 

@@ -11,7 +11,7 @@
                     <!--Slide-->
                     <div class="slide">
                         <figure class="image">
-                            <a href="{{route('newsSingle', $news->slug)}}"><img src="{{ asset('public/uploads/news/'.$news->image) }}" alt="" /></a>
+                            <a href="{{route('newsSingle', $news->slug)}}"><img src="{{ asset('uploads/news/'.$news->image) }}" alt="" /></a>
                         </figure>
                         <div class="overlay-box">
                             <div class="overlay-inner">
@@ -70,11 +70,11 @@
 
                                                         @php $news_category = \App\Models\News::where('category_id', $category->id)->latest()->take(5)->get(); @endphp
                                                         <!--News Block Two-->
-                                                            @foreach($news_category as $cat_news)
+                                                        @foreach($news_category as $cat_news)
                                                         <div class="news-block-two">
                                                             <div class="inner-box">
                                                                 <div class="image">
-                                                                    <a href="#"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('public/uploads/news/'.$cat_news->image) }}" alt="" /></a>
+                                                                    <a href="#"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('uploads/news/'.$cat_news->image) }}" alt="" /></a>
                                                                     <div class="category"><a href="#">Travel</a></div>
                                                                 </div>
                                                                 <div class="lower-box">
@@ -91,24 +91,24 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                            @endforeach
+                                                    @endforeach
 
                                                     </div>
                                                 </div>
                                                 <div class="column col-md-6 col-sm-6 col-xs-12">
 
                                                     @foreach($categories_news_views as $cat_views_news)
-                                                        @if($category->id == $cat_views_news->category_id)
+                                                    @if($category->id == $cat_views_news->category_id)
                                                     <!--Widget Post-->
                                                     <article class="widget-post">
-                                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('public/uploads/news/'.$cat_views_news->image) }}" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('uploads/news/'.$cat_views_news->image) }}" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                         <div class="text"><a href="blog-single.html">
                                                                 {{ $cat_views_news->news_title }}
                                                             </a></div>
                                                         <div class="post-info">{{ $cat_views_news->created_at->diffForHumans() }}</div>
                                                     </article>
                                                     @endif
-                                                        @endforeach
+                                                @endforeach
 
                                                 </div>
                                             </div>
@@ -549,7 +549,7 @@
                                     <div class="row clearfix">
                                         <div class="image-column col-md-6 col-sm-6 col-xs-12">
                                             <div class="image">
-                                                <a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('public/uploads/news/'.$data->image) }}" alt="" /></a>
+                                                <a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('uploads/news/'.$data->image) }}" alt="" /></a>
                                             </div>
                                         </div>
                                         <div class="content-box col-md-6 col-sm-6 col-xs-12">
@@ -572,7 +572,7 @@
                                     </div>
                                 </div>
                             </div>
-                                @endforeach
+                        @endforeach
                         </div>
 
                         <!-- Styled Pagination -->

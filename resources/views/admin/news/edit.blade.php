@@ -38,7 +38,7 @@
                                 @csrf
 
                                 <div class="text-center">
-                                    <img src="{{ asset('public/uploads/news/'.$news->image) }}" alt="" width="200px" id="one" style="margin-top: 15px; margin-bottom: 10px">
+                                    <img src="{{ asset('uploads/news/'.$news->image) }}" alt="" width="200px" id="one" style="margin-top: 15px; margin-bottom: 10px">
                                 </div>
 
                                 <div class="row">

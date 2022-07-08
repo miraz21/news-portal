@@ -8,18 +8,40 @@ use App\Models\Theme;
 
 use Illuminate\Support\Facades\Session;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Str;
 
 use Image;
 
 class ThemeController extends Controller
 {
- public function theme()
- {
-    Session::put('admin_page','theme');
-    $theme=Theme::first();
-    return view('admin.theme.theme',compact('theme'));
- }
+    public function theme()
+    {
+    if(Auth::id())
+    {
+    if(Auth::user()->usertype==1)
+    {
+      Session::put('admin_page','theme');
+      $theme=Theme::first();
+      return view('admin.theme.theme',compact('theme'));
+    }
+ 
+    else{
+    return redirect()->back();
+    }
+    }
+    else{
+    return redirect('login');
+    }
+    }
+
+ // public function theme()
+ // {
+ //    Session::put('admin_page','theme');
+ //    $theme=Theme::first();
+ //    return view('admin.theme.theme',compact('theme'));
+ // }
 
      public function themeUpdate(Request  $request, $id)
      {
@@ -35,7 +57,7 @@ class ThemeController extends Controller
             if($image_tmp->isValid()){
                 $extension = $image_tmp->getClientOriginalExtension();
                 $filename = $slug . '-' . $random . '.' . $extension;
-                $image_path = 'public/uploads/' . $filename;
+                $image_path = 'uploads/' . $filename;
                 Image::make($image_tmp)->save($image_path);
                 $theme->header_logo = $filename;
             }
@@ -48,7 +70,7 @@ class ThemeController extends Controller
             if($image_tmp->isValid()){
                 $extension = $image_tmp->getClientOriginalExtension();
                 $filename = $slug . '-' . $random . '.' . $extension;
-                $image_path = 'public/uploads/' . $filename;
+                $image_path = 'uploads/' . $filename;
                 Image::make($image_tmp)->save($image_path);
                 $theme->footer_logo = $filename;
             }
@@ -62,7 +84,7 @@ class ThemeController extends Controller
             if($image_tmp->isValid()){
                 $extension = $image_tmp->getClientOriginalExtension();
                 $filename = $slug . '-' . $random . '.' . $extension;
-                $image_path = 'public/uploads/' . $filename;
+                $image_path = 'uploads/' . $filename;
                 Image::make($image_tmp)->save($image_path);
                 $theme->favicon = $filename;
             }

@@ -54,7 +54,7 @@
                                           <tr>
                                               <td>{{ $loop->index + 1 }}</td>
                                               <td>
-                                                  <img src="{{ asset('public/uploads/news/'.$data->image) }}" alt="" width="200px">
+                                                  <img src="{{ asset('uploads/news/'.$data->image) }}" alt="" width="200px">
                                               </td>
                                               <td>{{ $data->news_title }}</td>
                                               <td>{{ $data->admin->name }}</td>

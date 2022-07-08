@@ -169,4 +169,4 @@ filebrowserUploadMethod: 'form'
 </script>
 
 
-    @endsection
+ @endsection

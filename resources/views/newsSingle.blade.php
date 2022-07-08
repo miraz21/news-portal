@@ -40,7 +40,7 @@
                                     </ul>
                                 </div>
                                 
-                       {!! $news_detail->news_content !!}
+                                {!! $news_detail->news_content !!}
                                 
                                 <!--New Article-->
                                 <ul class="new-article clearfix">

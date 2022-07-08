@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Social;
 
 use Illuminate\Support\Facades\Session;
@@ -12,10 +14,29 @@ class SocialController extends Controller
 {
     public function social()
     {
-        Session::put('admin_page','social');
-        $social=Social::first();
-        return view('admin.theme.social',compact('social'));
+    if(Auth::id())
+    {
+    if(Auth::user()->usertype==1)
+    {
+       Session::put('admin_page','social');
+       $social=Social::first();
+       return view('admin.theme.social',compact('social'));
     }
+    else{
+    return redirect()->back();
+    }
+    }
+    else{
+    return redirect('login');
+    }
+    }
+    
+    // public function social()
+    // {
+    //     Session::put('admin_page','social');
+    //     $social=Social::first();
+    //     return view('admin.theme.social',compact('social'));
+    // }
 
     public function socialUpdate(Request $request, $id)
     {

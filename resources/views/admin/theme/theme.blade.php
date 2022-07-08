@@ -39,7 +39,7 @@
                                 <input type="file" class="form-control" name="header_logo">
                             </div>
                             <div class="col-lg-4">
-                                <div class="img-thumbnail float-right"><img src="{{ asset('public/uploads/'.$theme->header_logo) }}" alt="" width="200" height="40"></div>
+                                <div class="img-thumbnail float-right"><img src="{{ asset('uploads/'.$theme->header_logo) }}" alt="" width="200" height="40"></div>
                             </div>
                         </div>
 
