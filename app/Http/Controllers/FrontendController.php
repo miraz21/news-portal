@@ -51,10 +51,14 @@ class FrontendController extends Controller
                 $news_detail->increment('view_count');
                 Session::put($newsKey, 1);
             }
+            $related_news = News::where('category_id', '=', $news_detail->category_id)->where('id', '!=', $news_detail->id)->get();
+        }else{
+            $related_news = [];
         }
 
 
-        $related_news = News::where('category_id', '=', $news_detail->category_id)->where('id', '!=', $news_detail->id)->get();
+
+
         return view('newsSingle', compact('news_detail', 'theme', 'related_news'));
     }
 }
