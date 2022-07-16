@@ -11,6 +11,7 @@ use App\Models\Social;
 
 use App\Models\Theme;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $admin = User::insert([
+        $admin = User::create([
             'name' => 'Admin',
             'email' => 'shaifulbd123@gmail.com',
             'phone' => '0167008888',
@@ -29,7 +30,24 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('shaifulbd123@gmail.com'),
         ]);
 
+        Role::create(['name' => 'admin']);
+        Role::create(['name' => 'user']);
+        Role::create(['name' => 'author']);
+        Role::create(['name' => 'editor']);
+        Role::create(['name' => 'publisher']);
+        Role::create(['name' => 'contributor']);
+        Role::create(['name' => 'subscriber']);
+        Role::create(['name' => 'moderator']);
+        Role::create(['name' => 'administrator']);
+        Role::create(['name' => 'owner']);
+        Role::create(['name' => 'member']);
+        Role::create(['name' => 'client']);
+        Role::create(['name' => 'vendor']);
+        Role::create(['name' => 'employee']);
+        Role::create(['name' => 'customer']);
+        Role::create(['name' => 'supplier']);
 
+        $admin->syncRoles('admin');
 
         Theme::insert([
             'site_title' => "Our News Portal"

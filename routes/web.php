@@ -32,7 +32,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/admin/dashboard',[App\Http\Controllers\AdminController::class,'adminDashboard'])->name('adminDashboard');
+Route::get('/admin/dashboard',[App\Http\Controllers\AdminController::class,'adminDashboard'])->name('adminDashboard')->middleware('role:admin');
 
 Route::get('/category/index',[App\Http\Controllers\CategoryController::class,'index'])->name('category.index');
 

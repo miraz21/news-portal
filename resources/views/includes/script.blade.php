@@ -1,4 +1,4 @@
-</div>
+
 <!--End pagewrapper-->
 
 <!--Scroll to top-->
@@ -6,7 +6,7 @@
 
 <!--End Scroll to top-->
 
-<script src="{{asset('assets/js/jquery.js')}}"></script> 
+<script src="{{asset('assets/js/jquery.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/js/jquery.fancybox.pack.js')}}"></script>
 <script src="{{asset('assets/js/jquery.fancybox-media.js')}}"></script>
@@ -17,7 +17,5 @@
 <script src="{{asset('assets/js/script.js')}}"></script>
 <script src="{{asset('assets/js/color-settings.js')}}"></script>
 
-<script id="dsq-count-scr" src="//news-portal-10.disqus.com/count.js" async></script>
+{{--<script id="dsq-count-scr" src="//news-portal-10.disqus.com/count.js" async></script>--}}
 
-</body>
-</html>
