@@ -149,7 +149,7 @@
 
                             <!--Adds Widget-->
                             <div class="sidebar-widget sidebar-adds-widget">
-                                <div class="adds-block" style="background-image:url(images/resource/add-image.jpg);">
+                                <div class="adds-block" style="background-image:url({{ asset('images/resource/add-image.jpg') }});">
                                     <div class="inner-box">
                                         <div class="text">Advertisement <span> 340 x 283</span></div>
                                         <a href="#" class="theme-btn btn-style-two">Purchase Now</a>
@@ -209,19 +209,19 @@
                                                 <div class="content">
 
                                                     <article class="widget-post">
-                                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/post-thumb-3.jpg') }}" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                         <div class="text"><a href="blog-single.html">American Black Film Festival New projects from film TV</a></div>
                                                         <div class="post-info">April 03, 2016</div>
                                                     </article>
 
                                                     <article class="widget-post">
-                                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-4.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/post-thumb-4.jpg') }}" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                         <div class="text"><a href="blog-single.html">Amy Schumer swaps lives with Anna Wintour</a></div>
                                                         <div class="post-info">April 04, 2016</div>
                                                     </article>
 
                                                     <article class="widget-post">
-                                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-1.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
+                                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/post-thumb-1.jpg') }}" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                         <div class="text"><a href="blog-single.html">Priyanka Chopra got her what photoshopped?</a></div>
                                                         <div class="post-info">April 01, 2016</div>
                                                     </article>
@@ -260,7 +260,7 @@
                 <!--Fullwidth Add-->
                 <div class="fullwidth-add text-center">
                     <div class="image">
-                        <a href="#"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/add-1.jpg" alt="" /></a>
+                        <a href="#"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/add-1.jpg') }}" alt="" /></a>
                     </div>
                 </div>
 
@@ -277,7 +277,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-7.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-7.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -298,7 +298,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-8.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-8.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -319,7 +319,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-9.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-9.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -340,7 +340,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-7.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-7.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -361,7 +361,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-8.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-8.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -382,7 +382,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-9.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-9.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -403,7 +403,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img  class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-7.jpg" alt="" />
+                                <img  class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-7.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -424,7 +424,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-8.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-8.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -445,7 +445,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-9.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-9.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -466,7 +466,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-7.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-7.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -487,7 +487,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-8.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-8.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -508,7 +508,7 @@
                     <div class="news-block-three">
                         <div class="inner-box">
                             <div class="image">
-                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-9.jpg" alt="" />
+                                <img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-9.jpg') }}" alt="" />
                                 <div class="overlay-box">
                                     <a href="blog-single-2.html" class="play-btn"><span class="icon qb-play-arrow"></span></a>
                                     <div class="content">
@@ -607,7 +607,7 @@
                                 <div class="news-block-five">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/news-14.jpg" alt="" /></a>
+                                            <a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/news-14.jpg') }}" alt="" /></a>
                                             <div class="category"><a href="blog-single.html">Travel</a></div>
                                         </div>
                                         <div class="lower-box">
@@ -628,7 +628,7 @@
                                 <!--Widget Post Two-->
                                 <article class="widget-post-two">
                                     <div class="inner">
-                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-5.jpg" alt=""></a></figure>
+                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/post-thumb-5.jpg') }}" alt=""></a></figure>
                                         <div class="text"><a href="blog-single.html">A young woman holding a beautiful umbrella in the rain</a></div>
                                         <div class="rating">
                                             <span class="fa fa-star"></span>
@@ -644,7 +644,7 @@
                                 <!--Widget Post Two-->
                                 <article class="widget-post-two">
                                     <div class="inner">
-                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-2.jpg" alt=""></a></figure>
+                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/post-thumb-2.jpg') }}" alt=""></a></figure>
                                         <div class="text"><a href="blog-single.html">Fix an Exchange Rate now with a Forward Contract</a></div>
                                         <div class="rating">
                                             <span class="fa fa-star"></span>
@@ -660,7 +660,7 @@
                                 <!--Widget Post Two-->
                                 <article class="widget-post-two">
                                     <div class="inner">
-                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="images/resource/post-thumb-3.jpg" alt=""></a></figure>
+                                        <figure class="post-thumb"><a href="blog-single.html"><img class="wow fadeIn" data-wow-delay="0ms" data-wow-duration="2500ms" src="{{ asset('images/resource/post-thumb-3.jpg') }}" alt=""></a></figure>
                                         <div class="text"><a href="blog-single.html">Study the New Digital Course Developed with Google</a></div>
                                         <div class="rating">
                                             <span class="fa fa-star"></span>

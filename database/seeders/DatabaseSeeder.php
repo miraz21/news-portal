@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 use App\Models\Admin;
@@ -9,6 +10,7 @@ use App\Models\Admin;
 use App\Models\Social;
 
 use App\Models\Theme;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,22 +21,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Admin::insert([
-        'name'=>'Super Admin',
-        'email'=>'admin@gmail.com',
-        'password'=>bcrypt('password');
-        'image'=>'',
+        $admin = User::insert([
+            'name' => 'Admin',
+            'email' => 'shaifulbd123@gmail.com',
+            'phone' => '0167008888',
+            'address' => 'Dhaka',
+            'password' => Hash::make('shaifulbd123@gmail.com'),
         ]);
 
-        // \App\Models\User::factory(10)->create();
+
+
         Theme::insert([
-        'site_title'=>"Our News Portal"
+            'site_title' => "Our News Portal"
         ]);
 
         Social::insert([
-        'facebook'=>''
+            'facebook' => ''
         ]);
     }
-
-
 }

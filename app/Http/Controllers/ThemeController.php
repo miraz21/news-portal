@@ -14,25 +14,25 @@ use Image;
 
 class ThemeController extends Controller
 {
- public function theme()
- {
-    Session::put('admin_page','theme');
-    $theme=Theme::first();
-    return view('admin.theme.theme',compact('theme'));
- }
+    public function theme()
+    {
+        Session::put('admin_page', 'theme');
+        $theme = Theme::first();
+        return view('admin.theme.theme', compact('theme'));
+    }
 
-     public function themeUpdate(Request  $request, $id)
-     {
+    public function themeUpdate(Request  $request, $id)
+    {
         $data = $request->all();
         $theme = Theme::findOrFail($id);
         $theme->site_title = $data['site_title'];
 
 
         $slug = Str::slug($data['site_title']);
-        $random = rand(1,999999);
-        if($request->hasFile('header_logo')){
+        $random = rand(1, 999999);
+        if ($request->hasFile('header_logo')) {
             $image_tmp = $request->file('header_logo');
-            if($image_tmp->isValid()){
+            if ($image_tmp->isValid()) {
                 $extension = $image_tmp->getClientOriginalExtension();
                 $filename = $slug . '-' . $random . '.' . $extension;
                 $image_path = 'public/uploads/' . $filename;
@@ -42,10 +42,10 @@ class ThemeController extends Controller
         }
 
         $slug = "footer-logo";
-        $random = rand(1,999999);
-        if($request->hasFile('footer_logo')){
+        $random = rand(1, 999999);
+        if ($request->hasFile('footer_logo')) {
             $image_tmp = $request->file('footer_logo');
-            if($image_tmp->isValid()){
+            if ($image_tmp->isValid()) {
                 $extension = $image_tmp->getClientOriginalExtension();
                 $filename = $slug . '-' . $random . '.' . $extension;
                 $image_path = 'public/uploads/' . $filename;
@@ -56,10 +56,10 @@ class ThemeController extends Controller
 
 
         $slug = "favicon";
-        $random = rand(1,999999);
-        if($request->hasFile('favicon')){
+        $random = rand(1, 999999);
+        if ($request->hasFile('favicon')) {
             $image_tmp = $request->file('favicon');
-            if($image_tmp->isValid()){
+            if ($image_tmp->isValid()) {
                 $extension = $image_tmp->getClientOriginalExtension();
                 $filename = $slug . '-' . $random . '.' . $extension;
                 $image_path = 'public/uploads/' . $filename;
