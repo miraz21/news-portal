@@ -29,6 +29,14 @@ class DatabaseSeeder extends Seeder
             'address' => 'Dhaka',
             'password' => Hash::make('shaifulbd123@gmail.com'),
         ]);
+        $user = User::create([
+            'name' => 'User',
+            'email' => 'user@gmail.com',
+            'phone' => '0167008888',
+            'address' => 'Dhaka',
+            'password' => Hash::make('user@gmail.com'),
+        ]);
+
 
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'user']);
@@ -48,6 +56,7 @@ class DatabaseSeeder extends Seeder
         Role::create(['name' => 'supplier']);
 
         $admin->syncRoles('admin');
+        $user->assignRole('user');
 
         Theme::insert([
             'site_title' => "Our News Portal"

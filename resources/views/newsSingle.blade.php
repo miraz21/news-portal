@@ -5,17 +5,19 @@
     <div class="blog-single-gallery grey-bg">
     	<div class="auto-container">
             <div class="image">
+                @if( file_exists('uploads/news/'. $news_detail->image))
             	<img src="{{asset('uploads/news/'. $news_detail->image)}}" alt="" />
+                @endif
             </div>
         </div>
     </div>
     <!--End Single Gallery-->
-    
+
     <!--Sidebar Page Container-->
     <div class="sidebar-page-container">
     	<div class="auto-container">
         	<div class="row clearfix">
-            	
+
                 <!--Content Side-->
                 <div class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
 					<div class="content">
@@ -27,7 +29,7 @@
                                         <li>{{$news_detail->category->category_name}}</li>
                                         <li>{{$news_detail->news_title}}</li>
                                     </ul>
-                                
+
                                     <h2>{{$news_detail->news_title}}</h2>
                                     <ul class="post-meta">
                                         <li><span class="icon qb-clock"></span>{{$news_detail->created_at->diffForHumans}}</li>
@@ -43,16 +45,16 @@
                                         <li class="pinteret"><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
                                     </ul>
                                 </div>
-                                
+
                        {!! $news_detail->news_content !!}
-                                
+
                                 <!--New Article-->
                                 <ul class="new-article clearfix">
                                 	<li><a href="#"><span class="fa fa-angle-left"></span> &ensp; &ensp; &ensp; &ensp; Previous Article</a></li>
                                     <li><a href="#">Next Article &ensp; &ensp; &ensp; &ensp; <span class="fa fa-angle-right"></span></a></li>
                                 </ul>
                             </div>
-                            
+
                            	<!--Author Box-->
                             <div class="author-box">
                                 <div class="author-comment">
@@ -70,7 +72,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!--Related Posts-->
                             <div class="related-posts">
                             	<div class="sec-title">
@@ -93,11 +95,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                   
+
                                     @endforeach
                                 </div>
                             </div>
-                            
+
                             <!--Comments Area-->
                             <div class="comments-area">
                                 <div class="sec-title"><h2>Comments</h2></div>
@@ -120,12 +122,12 @@
                             })();
                             </script>
                         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                
+
                             </div>
-                            
+
                             <!-- Comment Form -->
                             <div class="comment-form">
-                                    
+
                                 <div class="sec-title"><h2>Leave a comment</h2></div>
                                 <!--Comment Form-->
                                 <form method="post" action="blog.html">
@@ -133,37 +135,37 @@
                                         <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                             <input type="text" name="username" placeholder="Name ..." required>
                                         </div>
-                                        
+
                                         <div class="col-md-4 col-sm-6 col-xs-12 form-group">
                                             <input type="email" name="email" placeholder="Email ..." required>
                                         </div>
-                                        
+
                                         <div class="col-md-4 col-sm-12 col-xs-12 form-group">
                                             <input type="text" name="website" placeholder="Website ..." required>
                                         </div>
-                                        
+
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
                                             <textarea name="message" placeholder="Message ..."></textarea>
                                         </div>
-                                        
+
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
                                             <button class="theme-btn" type="submit" name="submit-form">Submit Comment</button>
                                         </div>
-                                        
+
                                     </div>
                                 </form>
-                                    
+
                             </div>
                             <!--End Comment Form -->
-                            
+
                         </div>
                     </div>
                 </div>
-                
+
                 <!--Sidebar Side-->
                 <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 	<aside class="sidebar default-sidebar right-sidebar">
-					
+
                     	<!-- Search -->
                         <div class="sidebar-widget search-box">
                         	<form method="post" action="contact.html">
@@ -173,7 +175,7 @@
                                 </div>
                             </form>
 						</div>
-                        
+
                         <!--Recent News Widget-->
                         <div class="sidebar-widget recent-news-widget">
                         	<div class="sec-title">
@@ -200,7 +202,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                         	<!--Widget Post Two-->
                             <article class="widget-post-two">
                                 <div class="inner">
@@ -216,7 +218,7 @@
                                     </div>
                                 </div>
                             </article>
-                        
+
                         	<!--Widget Post Two-->
                             <article class="widget-post-two">
                                 <div class="inner">
@@ -232,7 +234,7 @@
                                     </div>
                                 </div>
                             </article>
-                        
+
                         	<!--Widget Post Two-->
                             <article class="widget-post-two">
                                 <div class="inner">
@@ -248,9 +250,9 @@
                                     </div>
                                 </div>
                             </article>
-                            
+
                         </div>
-                        
+
                         <!--Social Widget-->
                         <div class="sidebar-widget sidebar-social-widget">
                             <div class="sidebar-title">
@@ -268,10 +270,10 @@
                             </ul>
 						</div>
                     	<!--End Social Widget-->
-                    	
+
                         <!--Adds Widget-->
                         <div class="sidebar-widget sidebar-adds-widget">
-                        	<div class="adds-block" style="background-image:url(images/resource/add-image-3.jpg);">
+                        	<div class="adds-block" style="background-image:url({{ asset('images/resource/add-image-3.jpg') }});">
                             	<div class="inner-box">
                                 	<div class="text">Advertisement <span> 340 x 283</span></div>
                                     <a href="#" class="theme-btn btn-style-two">Purchase Now</a>
@@ -279,110 +281,110 @@
                             </div>
                         </div>
                         <!--Ends Adds Widget-->
-                        
+
                     	<!--News Post Widget-->
                         <div class="sidebar-widget posts-widget">
-                        	
+
                             <!--Product widget Tabs-->
                             <div class="product-widget-tabs">
                                 <!--Product Tabs-->
                                 <div class="prod-tabs tabs-box">
-                                
+
                                     <!--Tab Btns-->
                                     <ul class="tab-btns tab-buttons clearfix">
                                         <li data-tab="#prod-popular" class="tab-btn active-btn">Popular</li>
                                         <li data-tab="#prod-recent" class="tab-btn">Recent</li>
                                         <li data-tab="#prod-comment" class="tab-btn">Comments</li>
                                     </ul>
-                                    
+
                                     <!--Tabs Container-->
                                     <div class="tabs-content">
-                                        
+
                                         <!--Tab / Active Tab-->
                                         <div class="tab active-tab" id="prod-popular">
                                             <div class="content">
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">Priyanka Chopra got her what photoshopped?</a></div>
                                                     <div class="post-info">April 01, 2016</div>
                                                 </article>
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">Jerry Seinfeld grabs coffee with Margaret Cho and it gets</a></div>
                                                     <div class="post-info">April 02, 2016</div>
                                                 </article>
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">American Black Film Festival New projects from film TV</a></div>
                                                     <div class="post-info">April 03, 2016</div>
                                                 </article>
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-4.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">Amy Schumer swaps lives with Anna Wintour</a></div>
                                                     <div class="post-info">April 04, 2016</div>
                                                 </article>
-                                                
+
                                             </div>
                                         </div>
-                                        
+
                                         <!--Tab-->
                                         <div class="tab" id="prod-recent">
                     						<div class="content">
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">Jerry Seinfeld grabs coffee with Margaret Cho and it gets</a></div>
                                                     <div class="post-info">April 02, 2016</div>
                                                 </article>
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">American Black Film Festival New projects from film TV</a></div>
                                                     <div class="post-info">April 03, 2016</div>
                                                 </article>
-                                                
+
                                             </div>
                                         </div>
-                                        
+
                                         <!--Tab-->
                                         <div class="tab" id="prod-comment">
                                             <div class="content">
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">American Black Film Festival New projects from film TV</a></div>
                                                     <div class="post-info">April 03, 2016</div>
                                                 </article>
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-4.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">Amy Schumer swaps lives with Anna Wintour</a></div>
                                                     <div class="post-info">April 04, 2016</div>
                                                 </article>
-                                                
+
                                                 <article class="widget-post">
                                                     <figure class="post-thumb"><a href="blog-single.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a><div class="overlay"><span class="icon qb-play-arrow"></span></div></figure>
                                                     <div class="text"><a href="blog-single.html">Priyanka Chopra got her what photoshopped?</a></div>
                                                     <div class="post-info">April 01, 2016</div>
                                                 </article>
-                                                
+
                                             </div>
                                         </div>
-                                        
+
                                     </div>
-                                    
+
                                 </div>
-                                
+
                             </div>
                             <!--End Product Info Tabs-->
-                            
+
                         </div>
                         <!--End Post Widget-->
-                        
+
                         <!--Category Widget-->
                         <div class="sidebar-widget categories-widget">
                             <div class="sidebar-title">
@@ -399,12 +401,12 @@
                             </ul>
                         </div>
                         <!--End Category Widget-->
-                        
+
                     </aside>
                	</div>
-                
+
             </div>
-            
+
         </div>
     </div>
     <!--End Sidebar Page Container-->

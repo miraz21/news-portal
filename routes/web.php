@@ -18,7 +18,7 @@ Route::get('/home',[App\Http\Controllers\FrontendController::class,'redirect']);
 
 Route::get('/',[App\Http\Controllers\FrontendController::class,'index'])->name('index');
 
-Route::get('/news/{slug}',[App\Http\Controllers\FrontendController::class,'newsSingle'])->name('newsSingle');
+Route::get('/single-news/{slug}',[App\Http\Controllers\FrontendController::class,'newsSingle'])->name('newsSingle');
 
 
 

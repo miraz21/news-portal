@@ -54,6 +54,7 @@ class FrontendController extends Controller
             $related_news = News::where('category_id', '=', $news_detail->category_id)->where('id', '!=', $news_detail->id)->get();
         }else{
             $related_news = [];
+            abort(404);
         }
 
 
